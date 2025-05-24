@@ -35,6 +35,9 @@ body{
     padding-left: 3rem;
     border-radius: 1rem 10rem 1rem 1rem;
 }
+.after_details {
+    display: none;
+}
 .logo img{
     margin-bottom: 3rem;
 }
@@ -148,10 +151,24 @@ h1 span{
         width: 85%;
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
     body{
         background-color: var(--VERY-DARK-BLUE);
         background-image: none;
+    }
+    body::after {
+        content: '';
+        width: 100%;
+        height: 50rem;
+        background-image: url(img/bg-desktop.png);
+        transform: translateY(-2%);
+        top: 50%;
+        left: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: fill;
+        position: absolute;
+        z-index: -1;
     }
     .head{
         margin-bottom: 0;
@@ -176,17 +193,17 @@ h1 span{
         position: absolute;
         transform: translate(-40%,-50%);
     }
-    .details::after{
-        content: "";
-        background-color: white;
-        width: 3rem;
-        height: 6rem;
-        transform: skewY(45deg);
-        left: 78.8%;
-        top: 30%;
+    .after_details{
+        display: block;
         position: absolute;
-        border-radius: 1rem;
-        z-index: -1;
+        border-top: 3rem solid rgb(255, 255, 255);
+        border-right: 3rem solid rgba(255, 255, 255, 0);
+        border-left: 3rem solid rgba(255, 255, 255, 0);
+        border-bottom: 3rem solid rgba(255, 255, 255, 0);
+        transform: translate(-90%,-100%) rotate(90deg);
+        top: calc(0 + 2.8rem);
+        left: calc(90% + 0.3rem);
+        z-index: 1;
     }
 
 }
